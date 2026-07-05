@@ -1,87 +1,214 @@
-import ServiceCard from "../components/ServiceCard";
-import type { Service } from "../types/service";
+import {
+  Microscope,
+  Eye,
+  Droplet,
+  Syringe,
+  UserRound,
+  Building2,
+  Clock,
+  HeartPulse,
+  ShieldCheck,
+  Stethoscope,
+  BedDouble,
+  Activity,
+  Truck,
+} from "lucide-react";
+
+type ServiceHighlight = {
+  icon: keyof typeof ICON_MAP;
+  label: string;
+  detail: string;
+};
+
+type Service = {
+  id: number;
+  title: string;
+  description: string;
+  highlights: ServiceHighlight[];
+  imageLeft: boolean;
+  imageUrl: string;
+};
+
+const ICON_MAP = {
+  microscope: Microscope,
+  eye: Eye,
+  droplet: Droplet,
+  syringe: Syringe,
+  user: UserRound,
+  building: Building2,
+  clock: Clock,
+  heart: HeartPulse,
+  shield: ShieldCheck,
+  stethoscope: Stethoscope,
+  bed: BedDouble,
+  activity: Activity,
+  truck: Truck,
+} as const;
 
 const services: Service[] = [
   {
     id: 1,
-    title: "Outpatient & Impatient Care",
+    title: "Outpatient & Inpatient Care",
     description:
-      "Our Hospital is known as Makalu Everest Hospital where we provide complete Out Patient and In Patient Care for various ailments. From our team of doctors and specialists, we make sure that no patient is neglected and another treated properly. From consultations to full diagnostic evaluation, right down to acute and chronic treatment, we are personal, dedicated and treating you—you are not just a number!",
+      "Our outpatient and inpatient teams work together to deliver coordinated care from the first consultation to bedside recovery. We provide prompt check-ins, expert initial assessment, fast referral to specialists, and comfortable inpatient stays for all acute and chronic conditionsOur multidisciplinary healthcare professionals ensure that every patient receives personalized treatment plans tailored to their specific needs. With modern diagnostic facilities, advanced medical technology, and compassionate nursing care, we strive to provide accurate diagnoses and effective treatments in a timely manner.",
     highlights: [
-      "Consultation & Diagnosis: Expert doctors available for all conditions",
-      "Hospitalization: Comfortable inpatient care with modern facilities",
+      { icon: "stethoscope", label: "Consultation & Diagnosis", detail: "Expert doctors available for all conditions" },
+      { icon: "bed", label: "Hospitalization", detail: "Comfortable inpatient care with modern facilities" },
     ],
     imageLeft: true,
+    imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: 2,
     title: "Diagnostic & Services",
     description:
-      "We offer Diagnostic Services aimed at delivering accurate, prompt and complete diagnosis to patients. Accurate diagnosis is important in the successful treatment plan, so we recognize this. We provide state-of-the-art diagnostic equipment, such as blood screens, X-rays, MRIs, CT scans, and others.",
+      "Our diagnostic center delivers fast, accurate results with advanced imaging and lab services. From X-rays and PET scans to blood work and ultrasound, we use precision technology to find the cause quickly and support the right treatment plan.Our experienced radiologists, pathologists, and laboratory professionals work closely with physicians to ensure reliable results and informed medical decisions. Equipped with modern diagnostic equipment and quality assurance standards, we provide comprehensive testing services with a strong focus on accuracy, efficiency, and patient safety.",
     highlights: [
-      "Comprehensive Diagnostics: Blood tests, X-ray, MRI, ECG, and more",
-      "Advanced Technology: Latest imaging and diagnostic machines",
+      { icon: "microscope", label: "Comprehensive Diagnostics", detail: "Blood tests, X-ray, MRI, ECG, and more" },
+      { icon: "eye", label: "Advanced Technology", detail: "Latest imaging and diagnostic machines" },
     ],
     imageLeft: false,
+    imageUrl: "https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: 3,
     title: "Pharmacy",
     description:
-      "Patients are able to access the medicines they need at any time from our Pharmacy, with a convenient service that ensures that it is reliable and efficient. With a 24/7 operation, our pharmacy is equipped with a wide range of over-the-counter medications, prescription drugs, and specialized medicines.",
+      "Our pharmacy team fills prescriptions quickly and safely while offering expert medicine guidance. Patients can count on a full range of prescriptions, OTC supplies, and support for managed care programs in a convenient, 24/7 setting.Our licensed pharmacists work closely with physicians and healthcare providers to ensure the safe and effective use of medications, helping to minimize risks and improve treatment outcomes. We offer medication counseling, dosage guidance, drug interaction checks, and assistance with chronic disease management to help patients better understand and manage their treatment plans.",
     highlights: [
-      "24/7 Availability: Medicines available at all hours",
-      "Variety: Wide range of over-the-counter and prescription drugs",
+      { icon: "syringe", label: "24/7 Availability", detail: "Medicines available at all hours" },
+      { icon: "user", label: "Variety", detail: "Wide range of over-the-counter and prescription drugs" },
     ],
-    imageLeft: false,
+    imageLeft: true,
+    imageUrl: "https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: 4,
     title: "Emergency & Trauma Care",
     description:
-      "Our Emergency and Trauma Care unit is fully equipped to handle critical and life-threatening situations around the clock. Our trained emergency response team ensures rapid patient stabilization and immediate treatment for accident and trauma cases.",
+      "Our emergency and trauma department is ready 24/7 for serious injuries and sudden illness. We combine rapid triage, advanced emergency protocols, and critical care stabilization so every patient receives immediate, lifesaving treatment.Our highly trained emergency physicians, trauma specialists, nurses, and support staff work together to deliver comprehensive care for a wide range of conditions, including accidents, cardiac emergencies, strokes, respiratory distress, and other critical situations. Equipped with modern emergency facilities and advanced medical technology, we are prepared to handle complex and time-sensitive cases efficiently and effectively.",
     highlights: [
-      "24/7 Emergency Service: Round-the-clock availability",
-      "Trauma Management: Rapid response and stabilization",
+      { icon: "building", label: "24/7 Emergency Service", detail: "Round-the-clock availability" },
+      { icon: "activity", label: "Trauma Management", detail: "Rapid response and stabilization" },
     ],
     imageLeft: false,
+    imageUrl: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: 5,
     title: "Ambulance Services",
     description:
-      "We provide fast and fully equipped ambulance services for emergency patient transport. Our ambulances are staffed with trained personnel and carry essential medical equipment to provide trauma support during transit.",
+      "Our ambulance fleet delivers fast, safe transport during medical emergencies and urgent care transfers. Each vehicle carries life support equipment and trained paramedics to keep patients stable while moving them quickly to the right treatment facility.Available 24/7, our ambulance services are designed to provide rapid response and immediate medical assistance when every minute matters. Our teams are trained to manage a wide range of emergency situations, including trauma cases, cardiac emergencies, respiratory distress, and critical care transfers between healthcare facilities.",
     highlights: [
-      "Quick Response: Fast dispatch for emergencies",
-      "Fully Equipped: Medical support available during transport",
+      { icon: "building", label: "Emergency Support", detail: "24/7 ambulance services" },
+      { icon: "clock", label: "Quick Response", detail: "Rapid transport to hospitals and clinics" },
     ],
     imageLeft: true,
+    imageUrl: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: 6,
     title: "Vaccination & Immunization",
     description:
-      "We offer a complete range of vaccination and immunization services for children and adults. Our program includes routine vaccinations, travel vaccines, and disease prevention programs to keep our community healthy.",
+      "Our vaccination services help protect families and communities with safe, up-to-date immunizations. We offer routine childhood vaccines, seasonal flu shots, and travel immunizations, all administered by caring nurses in a clean clinic setting.Our team follows the latest national and international immunization guidelines to ensure every patient receives the appropriate vaccines at the right time. We are committed to making the vaccination process simple, convenient, and reassuring by providing clear information, personalized recommendations, and professional support throughout each visit.",
     highlights: [
-      "Routine Vaccinations: Available for all age groups",
-      "Travel Vaccines: Immunization for international travel",
+      { icon: "heart", label: "Routine Vaccines", detail: "For infants, children, and adults" },
+      { icon: "shield", label: "Travel Vaccines", detail: "Vaccinations for international travel" },
     ],
     imageLeft: false,
+    imageUrl: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
-function ServicesPage() {
+function ServiceContent({ title, description, highlights }: Omit<Service, "id" | "imageLeft" | "imageUrl">) {
   return (
-    <div>
-      <div>
-        <h1>Services</h1>
-        <p>Home &gt; Services</p>
+    <div className="w-full">
+      <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">
+        {title}
+      </h2>
+      <p className="mt-5 text-base leading-8 text-slate-600">{description}</p>
+
+      <div className="mt-7 space-y-4">
+        {highlights.map((item, i) => {
+          const Icon = ICON_MAP[item.icon];
+          return (
+            <div key={i} className="flex items-start gap-3">
+              <Icon className="mt-1 h-5 w-5 flex-shrink-0 text-sky-800" strokeWidth={2} />
+              <p className="text-base leading-7 text-slate-700">
+                <span className="font-semibold text-blue-900">{item.label}:</span>{" "}
+                <span className="text-slate-600">{item.detail}</span>
+              </p>
+            </div>
+          );
+        })}
       </div>
-      <div>
-        {services.map((service) => (
-          <ServiceCard key={service.id} service={service} />
-        ))}
+    </div>
+  );
+}
+
+function ServiceCard({ service }: { service: Service }) {
+  const { title, description, highlights, imageUrl, imageLeft } = service;
+
+  return (
+    <div
+      className={`mx-auto w-[88%] max-w-[1980px] flex flex-col gap-10 items-start ${
+        imageLeft ? "md:flex-row" : "md:flex-row-reverse"
+      } md:gap-12 xl:gap-16`}
+      style={{ marginLeft: "auto", marginRight: "auto" }}
+    >
+      <div className="w-full md:w-1/2">
+        <img
+          src={imageUrl}
+          alt={title}
+          className="h-[340px] w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-200/40 sm:h-[380px]"
+        />
       </div>
+
+      <div className="w-full md:w-1/2">
+        <ServiceContent title={title} description={description} highlights={highlights} />
+      </div>
+    </div>
+  );
+}
+
+function ServicesPage() {
+
+  return (
+    <div className="font-sans bg-slate-50 text-slate-900">
+      {/* Hero */}
+      <div
+        className="relative overflow-hidden bg-slate-950 text-white"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1600&q=80')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div
+          className="relative z-10 mx-auto flex w-[88%] min-h-104 max-w-[1760px] flex-col items-center justify-center px-6 py-24 text-center sm:px-8 lg:px-16"
+          style={{ marginLeft: "auto", marginRight: "auto" }}
+        >
+          <p className="text-sm font-semibold uppercase tracking-[0.4em] text-sky-200">
+            Home / Services
+          </p>
+          <h1 className="mt-4 text-5xl font-extrabold tracking-tight text-white sm:text-6xl">
+            Services
+          </h1>
+          <p className="mx-auto mt-4 max-w-[860px] text-base leading-8 text-slate-200 sm:text-lg">
+            Explore our full range of services designed to deliver compassionate care, accurate diagnosis, and fast emergency support whenever you need it.
+          </p>
+        </div>
+      </div>
+
+      {/* Services list */}
+      <section className="bg-slate-50 border-t border-slate-200 pt-[10rem] pb-20 px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto w-[88%] max-w-[1980px] space-y-[9.45rem]" style={{ marginLeft: "auto", marginRight: "auto" }}>
+          {services.map((service) => (
+            <ServiceCard key={service.id} service={service} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
