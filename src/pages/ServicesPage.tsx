@@ -133,9 +133,9 @@ function ServiceContent({ title, description, highlights }: Omit<Service, "id" |
           const Icon = ICON_MAP[item.icon];
           return (
             <div key={i} className="flex items-start gap-3">
-              <Icon className="mt-1 h-5 w-5 flex-shrink-0 text-sky-800" strokeWidth={2} />
+              <Icon className="mt-1 h-5 w-5 flex-shrink-0 text-blue-700" strokeWidth={2} />
               <p className="text-base leading-7 text-slate-700">
-                <span className="font-semibold text-blue-900">{item.label}:</span>{" "}
+                <span className="font-semibold text-blue-700">{item.label}:</span>{" "}
                 <span className="text-slate-600">{item.detail}</span>
               </p>
             </div>
@@ -156,15 +156,16 @@ function ServiceCard({ service }: { service: Service }) {
       } md:gap-12 xl:gap-16`}
       style={{ marginLeft: "auto", marginRight: "auto" }}
     >
-      <div className="w-full md:w-1/2">
+      <div className="w-full md:w-1/2 relative overflow-hidden rounded-[1.75rem] shadow-2xl shadow-slate-200/40">
         <img
           src={imageUrl}
           alt={title}
-          className="h-[340px] w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-200/40 sm:h-[380px]"
+          className="h-[340px] w-full object-cover sm:h-[380px]"
         />
+        <div className="absolute inset-0 bg-[#0d4b8e]/30 pointer-events-none" />
       </div>
 
-      <div className="w-full md:w-1/2">
+      <div className="w-full md:w-1/2 flex flex-col justify-center">
         <ServiceContent title={title} description={description} highlights={highlights} />
       </div>
     </div>
@@ -174,22 +175,22 @@ function ServiceCard({ service }: { service: Service }) {
 function ServicesPage() {
 
   return (
-    <div className="font-sans bg-slate-50 text-slate-900">
+    <div className="font-sans bg-sky-50 text-slate-900">
       {/* Hero */}
       <div
-        className="relative overflow-hidden bg-slate-950 text-white"
+        className="relative overflow-hidden bg-[#0d4b8e] text-white"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1600&q=80')",
+            "linear-gradient(rgba(13, 75, 142, 0.88), rgba(13, 75, 142, 0.88)), url('https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1600&q=80')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         <div
-          className="relative z-10 mx-auto flex w-[88%] min-h-104 max-w-[1760px] flex-col items-center justify-center px-6 py-24 text-center sm:px-8 lg:px-16"
+          className="relative z-10 mx-auto flex w-[88%] min-h-[18rem] max-w-[1760px] flex-col items-center justify-center px-6 py-16 text-center sm:px-8 lg:px-16"
           style={{ marginLeft: "auto", marginRight: "auto" }}
         >
-          <p className="text-sm font-semibold uppercase tracking-[0.4em] text-sky-200">
+          <p className="text-sm font-semibold uppercase tracking-[0.4em] text-cyan-200">
             Home / Services
           </p>
           <h1 className="mt-4 text-5xl font-extrabold tracking-tight text-white sm:text-6xl">
@@ -201,12 +202,16 @@ function ServicesPage() {
         </div>
       </div>
 
+      <div className="bg-sky-50 h-12" />
+
       {/* Services list */}
-      <section className="bg-slate-50 border-t border-slate-200 pt-[10rem] pb-20 px-6 sm:px-8 lg:px-10">
-        <div className="mx-auto w-[88%] max-w-[1980px] space-y-[9.45rem]" style={{ marginLeft: "auto", marginRight: "auto" }}>
-          {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
-          ))}
+      <section className="bg-sky-50 pt-20 pb-20 px-6 sm:px-8 lg:px-10">
+        <div className="mx-auto w-[88%] max-w-[1980px]" style={{ marginLeft: "auto", marginRight: "auto" }}>
+          <div className="space-y-24">
+            {services.map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
+          </div>
         </div>
       </section>
     </div>
