@@ -56,7 +56,7 @@ const services: Service[] = [
       { icon: "bed", label: "Hospitalization", detail: "Comfortable inpatient care with modern facilities" },
     ],
     imageLeft: true,
-    imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+    imageUrl: "/photo-1576091160550-2173dba999ef.jpg",
   },
   {
     id: 2,
@@ -68,7 +68,7 @@ const services: Service[] = [
       { icon: "eye", label: "Advanced Technology", detail: "Latest imaging and diagnostic machines" },
     ],
     imageLeft: false,
-    imageUrl: "https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?auto=format&fit=crop&w=1200&q=80",
+    imageUrl: "/photo-1530026186672-2cd00ffc50fe.jpg",
   },
   {
     id: 3,
@@ -80,7 +80,7 @@ const services: Service[] = [
       { icon: "user", label: "Variety", detail: "Wide range of over-the-counter and prescription drugs" },
     ],
     imageLeft: true,
-    imageUrl: "https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=1200&q=80",
+    imageUrl: "/photo-1576602976047-174e57a47881.jpg",
   },
   {
     id: 4,
@@ -92,7 +92,7 @@ const services: Service[] = [
       { icon: "activity", label: "Trauma Management", detail: "Rapid response and stabilization" },
     ],
     imageLeft: false,
-    imageUrl: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
+    imageUrl: "/photo-1516549655169-df83a0774514.jpg",
   },
   {
     id: 5,
@@ -104,7 +104,7 @@ const services: Service[] = [
       { icon: "clock", label: "Quick Response", detail: "Rapid transport to hospitals and clinics" },
     ],
     imageLeft: true,
-    imageUrl: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80",
+    imageUrl: "/photo-1519823551278-64ac92734fb1.jpg",
   },
   {
     id: 6,
@@ -116,7 +116,7 @@ const services: Service[] = [
       { icon: "shield", label: "Travel Vaccines", detail: "Vaccinations for international travel" },
     ],
     imageLeft: false,
-    imageUrl: "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?auto=format&fit=crop&w=1200&q=80",
+    imageUrl: "/photo-1579684453423-f84349ef60b0.jpg",
   },
 ];
 
@@ -181,7 +181,7 @@ function ServicesPage() {
         className="relative overflow-hidden bg-[#0d4b8e] text-white"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(13, 75, 142, 0.88), rgba(13, 75, 142, 0.88)), url('https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1600&q=80')",
+            "linear-gradient(rgba(13, 75, 142, 0.85), rgba(13, 75, 142, 0.85)), url('/photo-1516549655169-df83a0774514.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
