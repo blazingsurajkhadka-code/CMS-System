@@ -20,16 +20,16 @@ const Home = () => {
       <Hero />
 
       
-      <section className="border-y border-gray-100 bg-white py-12">
+      <section className="bg-gray-800 py-12">
         <div className="container-custom px-6">
-          <p className="text-center text-sm font-semibold uppercase tracking-wider text-gray-400">
+          <p className="text-center text-sm font-semibold uppercase tracking-wider text-gray-300">
             Used by teams across a range of industries
           </p>
           <div className="mt-8 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
             {trustedCompanies.map((company) => (
               <div
                 key={company}
-                className="flex items-center justify-center text-xl font-extrabold text-gray-300 transition-colors duration-300 hover:text-gray-500"
+                className="flex items-center justify-center text-xl font-extrabold text-white transition-colors duration-300 hover:text-blue-300"
               >
                 {company}
               </div>
@@ -136,10 +136,7 @@ const Home = () => {
       
       <section className="section-padding bg-white">
         <div className="container-custom px-6">
-            <div className="relative overflow-hidden rounded-3xl bg-gray-900 px-8 py-16 text-center shadow-2xl shadow-gray-900/30 sm:px-16">
-            <div className="pointer-events-none absolute -left-16 -top-16 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-16 -right-16 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
-
+            <div className="rounded-3xl bg-gray-900 px-8 py-16 text-center shadow-2xl shadow-gray-900/30 sm:px-16">
             <div className="relative mx-auto max-w-2xl">
               <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                 Ready to improve your website?

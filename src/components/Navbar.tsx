@@ -10,7 +10,10 @@ const Navbar = () => {
   const location = useLocation();
 
   const isBlogPostPage = location.pathname.startsWith("/blog/");
-  const isLightHeader = scrolled || isBlogPostPage;
+  const isContentPage = ["/about", "/services", "/blog", "/contact"].includes(
+    location.pathname
+  );
+  const isLightHeader = scrolled || isBlogPostPage || isContentPage;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -22,7 +25,7 @@ const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isLightHeader
-          ? "bg-white/80 backdrop-blur-xl shadow-lg shadow-gray-900/5 py-3"
+          ? "bg-white/90 backdrop-blur-xl border-b border-gray-200/80 shadow-sm shadow-gray-900/5 py-3"
           : "bg-transparent py-5"
       }`}
     >

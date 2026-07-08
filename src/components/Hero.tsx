@@ -4,10 +4,6 @@ import { ArrowRight, PlayCircle, Star, CheckCircle2 } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden bg-gray-800 text-white pt-32 pb-20 sm:pt-40 sm:pb-28">
-      <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-      <div className="pointer-events-none absolute top-1/3 right-1/4 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
-
       <div className="container-custom relative px-6">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div className="animate-fade-in-up">

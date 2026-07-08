@@ -19,29 +19,28 @@ const Blog = () => {
   return (
     <>
       
-      <section className="relative overflow-hidden bg-gray-800 text-white pt-32 pb-24">
-        <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-
-        <div className="container-custom relative px-6 text-center">
-          <span className="inline-block rounded-full border border-blue-700 bg-blue-700 px-4 py-1.5 text-sm font-semibold text-white">
-            Our Blog
-          </span>
-          <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-            Insights, Ideas &
-            <span className="block text-gray-300">Industry Perspectives</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
-            Practical articles on design, development, and marketing to help
-            you grow your digital presence.
-          </p>
+      <section className="relative overflow-hidden bg-white pt-32 pb-24 text-gray-900">
+        <div className="container-custom relative px-6">
+          <div className="rounded-[2rem] border border-gray-300 bg-gradient-to-br from-white via-gray-50 to-white px-8 py-10 text-center shadow-[0_30px_80px_-25px_rgba(15,23,42,0.28)] ring-1 ring-gray-200 sm:px-12 sm:py-14">
+            <span className="inline-block rounded-full border border-blue-700 bg-blue-700 px-4 py-1.5 text-sm font-semibold text-white">
+              Our Blog
+            </span>
+            <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+              Insights, Ideas &
+              <span className="block text-gray-600">Industry Perspectives</span>
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
+              Practical articles on design, development, and marketing to help
+              you grow your digital presence.
+            </p>
+          </div>
         </div>
       </section>
 
       
       <section className="section-padding bg-white">
         <div className="container-custom px-6">
-          <div className="group grid grid-cols-1 items-center gap-10 overflow-hidden rounded-3xl border border-gray-100 bg-gray-50 p-6 shadow-xl shadow-gray-900/5 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-400/10 lg:grid-cols-2 lg:p-10">
+          <div className="group grid grid-cols-1 items-center gap-10 overflow-hidden rounded-[2rem] border border-gray-300 bg-gradient-to-br from-white via-gray-50 to-white p-6 shadow-[0_30px_80px_-25px_rgba(15,23,42,0.28)] ring-1 ring-gray-200 transition-all duration-300 hover:shadow-[0_35px_90px_-20px_rgba(15,23,42,0.32)] lg:grid-cols-2 lg:p-10">
             <div className="overflow-hidden rounded-2xl">
               <img
                 src={featuredPost.image}
@@ -88,7 +87,7 @@ const Blog = () => {
       </section>
 
       
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-white">
         <div className="container-custom px-6">
           <SectionTitle
             eyebrow="Latest Articles"
@@ -129,15 +128,12 @@ const Blog = () => {
       
       <section className="section-padding bg-white">
         <div className="container-custom px-6">
-          <div className="relative overflow-hidden rounded-3xl bg-gray-900 px-8 py-16 text-center shadow-2xl shadow-gray-900/30 sm:px-16">
-            <div className="pointer-events-none absolute -left-16 -top-16 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-16 -right-16 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
-
+          <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-white px-8 py-16 text-center shadow-2xl shadow-gray-900/10 sm:px-16">
             <div className="relative mx-auto max-w-2xl">
-              <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+              <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
                 Never Miss an Update
               </h2>
-              <p className="mt-4 text-lg text-gray-200">
+              <p className="mt-4 text-lg text-gray-600">
                 Get our best articles delivered straight to your inbox, once
                 a week.
               </p>

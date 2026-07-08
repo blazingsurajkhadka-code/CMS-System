@@ -7,12 +7,12 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-slate-950 text-slate-300">
       <div className="container-custom px-6 py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Logo />
-            <p className="mt-5 text-sm leading-relaxed text-gray-400">
+            <p className="mt-5 text-sm leading-relaxed text-slate-400">
               A modern digital agency helping ambitious brands design, build,
               and grow exceptional digital products.
             </p>
@@ -22,7 +22,7 @@ const Footer = () => {
                   key={idx}
                   href="#"
                   aria-label="Social media link"
-                  className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-700 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-600 hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-blue-300 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-600 hover:text-white"
                 >
                   <SocialIcon className="h-4 w-4" />
                 </a>
@@ -70,7 +70,7 @@ const Footer = () => {
             <h3 className="text-sm font-bold uppercase tracking-wider text-white">
               Newsletter
             </h3>
-            <p className="mt-5 text-sm text-gray-400">
+            <p className="mt-5 text-sm text-slate-400">
               Subscribe for occasional updates on new work and practical
               web tips.
             </p>
@@ -84,7 +84,7 @@ const Footer = () => {
                   type="email"
                   required
                   placeholder="Your email"
-                  className="w-full rounded-xl border border-white/10 bg-white/5 py-3 pl-10 pr-3 text-sm text-white placeholder-gray-500 outline-none transition-colors duration-300 focus:border-blue-400"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 py-3 pl-10 pr-3 text-sm text-white placeholder-slate-500 outline-none transition-colors duration-300 focus:border-blue-400"
                 />
               </div>
               <button
@@ -100,7 +100,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-white/10 py-6">
-        <div className="container-custom flex flex-col items-center justify-between gap-3 px-6 text-sm text-gray-500 sm:flex-row">
+        <div className="container-custom flex flex-col items-center justify-between gap-3 px-6 text-sm text-slate-500 sm:flex-row">
           <p>© {year} NexaCMS. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="transition-colors hover:text-gray-900">

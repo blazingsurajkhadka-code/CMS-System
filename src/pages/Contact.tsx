@@ -37,29 +37,29 @@ const Contact = () => {
   return (
     <>
       
-      <section className="relative overflow-hidden bg-gray-800 text-white pt-32 pb-24">
-        <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-
-        <div className="container-custom relative px-6 text-center">
-          <span className="inline-block rounded-full border border-blue-700 bg-blue-700 px-4 py-1.5 text-sm font-semibold text-white">
-            Contact Us
-          </span>
-          <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-            Let's Start a
-            <span className="block text-gray-300">Conversation</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
-            Have a project in mind or just want to say hello? We'd love to
-            hear from you.
-          </p>
+      <section className="relative overflow-hidden bg-white pt-32 pb-24 text-gray-900">
+        <div className="container-custom relative px-6">
+          <div className="rounded-[2rem] border border-gray-300 bg-gradient-to-br from-white via-gray-50 to-white px-8 py-10 text-center shadow-[0_30px_80px_-25px_rgba(15,23,42,0.28)] ring-1 ring-gray-200 sm:px-12 sm:py-14">
+            <span className="inline-block rounded-full border border-blue-700 bg-blue-700 px-4 py-1.5 text-sm font-semibold text-white">
+              Contact Us
+            </span>
+            <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+              Let's Start a
+              <span className="block text-gray-600">Conversation</span>
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
+              Have a project in mind or just want to say hello? We'd love to
+              hear from you.
+            </p>
+          </div>
         </div>
       </section>
 
       
       <section className="section-padding bg-white">
         <div className="container-custom px-6">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-5">
+          <div className="rounded-[2rem] border border-gray-300 bg-gradient-to-br from-white via-gray-50 to-white p-6 shadow-[0_30px_80px_-25px_rgba(15,23,42,0.28)] ring-1 ring-gray-200 lg:p-8">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-5">
             
             <div className="lg:col-span-3">
               <div className="rounded-3xl border border-gray-100 bg-gray-50 p-8 shadow-xl shadow-gray-900/5 sm:p-10">
@@ -240,7 +240,8 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       
       <section className="pb-20 bg-white">

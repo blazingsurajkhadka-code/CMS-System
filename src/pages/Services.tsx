@@ -16,32 +16,33 @@ const Services = () => {
   return (
     <>
       
-      <section className="relative overflow-hidden bg-gray-800 text-white pt-32 pb-24">
-        <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-
-        <div className="container-custom relative px-6 text-center">
-          <span className="inline-block rounded-full border border-blue-500/20 bg-blue-600 px-4 py-1.5 text-sm font-semibold text-white">
-            Our Services
-          </span>
-          <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-            Websites and tools for
-            <span className="block text-gray-300">growing teams</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
-            From design and development to launch and support, we help
-            businesses create digital products that work.
-          </p>
+      <section className="relative overflow-hidden bg-white pt-32 pb-24 text-gray-900">
+        <div className="container-custom relative px-6">
+          <div className="rounded-[2rem] border border-gray-300 bg-gradient-to-br from-white via-gray-50 to-white px-8 py-10 text-center shadow-[0_30px_80px_-25px_rgba(15,23,42,0.28)] ring-1 ring-gray-200 sm:px-12 sm:py-14">
+            <span className="inline-block rounded-full border border-blue-500/20 bg-blue-600 px-4 py-1.5 text-sm font-semibold text-white">
+              Our Services
+            </span>
+            <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+              Websites and tools for
+              <span className="block text-gray-600">growing teams</span>
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
+              From design and development to launch and support, we help
+              businesses create digital products that work.
+            </p>
+          </div>
         </div>
       </section>
 
       
       <section className="section-padding bg-white">
         <div className="container-custom px-6">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((service) => (
-              <ServiceCard key={service.id} service={service} />
-            ))}
+          <div className="rounded-[2rem] border border-gray-300 bg-gradient-to-br from-white via-gray-50 to-white p-8 shadow-[0_30px_80px_-25px_rgba(15,23,42,0.28)] ring-1 ring-gray-200 lg:p-10">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {services.map((service) => (
+                <ServiceCard key={service.id} service={service} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -169,7 +170,7 @@ const Services = () => {
               <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
                 Ready to Start Your Project?
               </h2>
-              <p className="mt-4 text-lg text-gray-200">
+              <p className="mt-4 text-lg text-gray-600">
                 Tell us about your goals and let's create a plan to achieve
                 them together.
               </p>
