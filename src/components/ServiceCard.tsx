@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import Icon from "./icon.tsx";
 import type { Service } from "../data/data";
 
