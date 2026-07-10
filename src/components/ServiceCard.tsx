@@ -34,10 +34,6 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
         ))}
       </ul>
 
-      <div className="relative mt-6 flex items-center gap-1 text-sm font-bold text-gray-900 transition-all duration-300 group-hover:gap-2">
-        Learn More
-        <ArrowUpRight className="h-4 w-4 text-blue-600" />
-      </div>
     </div>
   );
 };

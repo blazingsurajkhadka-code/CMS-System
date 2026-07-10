@@ -1,10 +1,37 @@
+import { useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
-import { AtSign, Mail, MessageSquare, Link as LinkIcon, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 import { navLinks, services } from "../data/data";
 import Logo from "./Logo";
 
 const Footer = () => {
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterMessage, setNewsletterMessage] = useState("");
+  const [newsletterError, setNewsletterError] = useState("");
   const year = new Date().getFullYear();
+
+  const validateEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!newsletterEmail.trim()) {
+      setNewsletterError("Please enter your email address.");
+      setNewsletterMessage("");
+      return;
+    }
+
+    if (!validateEmail(newsletterEmail)) {
+      setNewsletterError("Please enter a valid email address.");
+      setNewsletterMessage("");
+      return;
+    }
+
+    setNewsletterError("");
+    setNewsletterMessage("Subscribed successfully!");
+    setNewsletterEmail("");
+    setTimeout(() => setNewsletterMessage(""), 4000);
+  };
 
   return (
     <footer className="bg-slate-950 text-slate-300">
@@ -16,18 +43,6 @@ const Footer = () => {
               A modern digital agency helping ambitious brands design, build,
               and grow exceptional digital products.
             </p>
-            <div className="mt-6 flex gap-3">
-              {[LinkIcon, MessageSquare, AtSign].map((SocialIcon, idx) => (
-                <a
-                  key={idx}
-                  href="#"
-                  aria-label="Social media link"
-                  className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-blue-300 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-600 hover:text-white"
-                >
-                  <SocialIcon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
           </div>
 
           <div>
@@ -39,7 +54,7 @@ const Footer = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-sm text-gray-400 transition-colors duration-300 hover:text-gray-900"
+                    className="text-sm text-slate-400 transition-colors duration-300 hover:text-blue-400"
                   >
                     {link.label}
                   </Link>
@@ -57,7 +72,7 @@ const Footer = () => {
                 <li key={service.id}>
                   <Link
                     to="/services"
-                    className="text-sm text-gray-400 transition-colors duration-300 hover:text-gray-900"
+                    className="text-sm text-slate-400 transition-colors duration-300 hover:text-blue-400"
                   >
                     {service.title}
                   </Link>
@@ -75,16 +90,24 @@ const Footer = () => {
               web tips.
             </p>
             <form
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubscribe}
               className="mt-4 flex items-center gap-2"
             >
               <div className="relative flex-1">
                 <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-blue-400" />
                 <input
                   type="email"
-                  required
+                  value={newsletterEmail}
+                  onChange={(e) => {
+                    setNewsletterEmail(e.target.value);
+                    setNewsletterError("");
+                  }}
                   placeholder="Your email"
-                  className="w-full rounded-xl border border-white/10 bg-white/5 py-3 pl-10 pr-3 text-sm text-white placeholder-slate-500 outline-none transition-colors duration-300 focus:border-blue-400"
+                  className={`w-full rounded-xl border py-3 pl-10 pr-3 text-sm text-white caret-blue-400 placeholder-slate-400 outline-none transition-colors duration-300 focus:border-blue-400 ${
+                    newsletterError
+                      ? "border-red-400 bg-slate-900/90"
+                      : "border-white/20 bg-slate-900/80"
+                  }`}
                 />
               </div>
               <button
@@ -95,6 +118,14 @@ const Footer = () => {
                 <ArrowRight className="h-4 w-4" />
               </button>
             </form>
+            {newsletterError && (
+              <p className="mt-3 text-sm text-red-400">{newsletterError}</p>
+            )}
+            {newsletterMessage && (
+              <p className="mt-3 text-sm text-green-400">
+                {newsletterMessage}
+              </p>
+            )}
           </div>
         </div>
       </div>
@@ -103,10 +134,10 @@ const Footer = () => {
         <div className="container-custom flex flex-col items-center justify-between gap-3 px-6 text-sm text-slate-500 sm:flex-row">
           <p>© {year} NexaCMS. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="transition-colors hover:text-gray-900">
+            <a href="#" className="transition-colors hover:text-blue-400">
               Privacy Policy
             </a>
-            <a href="#" className="transition-colors hover:text-gray-900">
+            <a href="#" className="transition-colors hover:text-blue-400">
               Terms of Service
             </a>
           </div>

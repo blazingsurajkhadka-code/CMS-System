@@ -547,12 +547,12 @@ export const faqItems: FAQItem[] = [
 
 export const businessHours = [
   { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM" },
-  { day: "Saturday", hours: "10:00 AM - 4:00 PM" },
-  { day: "Sunday", hours: "Closed" },
+  { day: "Saturday", hours: "Holiday" },
+  { day: "Sunday", hours: "10:00 AM - 4:00 PM" },
 ];
 
 export const contactInfo = {
-  address: "1200 Innovation Avenue, Kathmandu, Nepal",
+  address: "Youth IT, Itahari, Nepal",
   phone: "+977 1-234-5678",
-  email: "hello@nexacms.com",
+  email: "hello@youthit.com",
 };

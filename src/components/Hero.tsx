@@ -37,8 +37,8 @@ const Hero = () => {
               {["Free consultation", "Clear pricing", "Fast replies"].map(
                 (item) => (
                   <div key={item} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-blue-600" />
-                    <span className="text-sm font-medium text-blue-700">
+                    <CheckCircle2 className="h-4 w-4 text-white" />
+                    <span className="text-sm font-medium text-white">
                       {item}
                     </span>
                   </div>
@@ -56,7 +56,7 @@ const Hero = () => {
               />
             </div>
 
-            <div className="absolute -left-6 -top-6 hidden rounded-2xl bg-gray-700 p-4 shadow-xl sm:block">
+            <div className="absolute -left-6 -top-6 hidden rounded-2xl bg-gray-700 p-4 shadow-xl sm:block animate-float">
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gray-600 text-white">
                   <CheckCircle2 className="h-6 w-6" />
@@ -71,7 +71,8 @@ const Hero = () => {
             </div>
 
             <div
-              className="absolute -bottom-6 -right-4 hidden rounded-2xl bg-white p-4 shadow-xl sm:block"
+              className="absolute -bottom-6 -right-4 hidden rounded-2xl bg-white p-4 shadow-xl sm:block animate-float"
+              style={{ animationDelay: "0.2s" }}
             >
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">

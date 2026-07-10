@@ -1,3 +1,4 @@
+import { useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Mail, Send } from "lucide-react";
 import Hero from "../components/Hero";
@@ -15,6 +16,34 @@ import {
 } from "../data/data";
 
 const Home = () => {
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterError, setNewsletterError] = useState("");
+  const [newsletterMessage, setNewsletterMessage] = useState("");
+
+  const validateEmail = (email: string) =>
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!newsletterEmail.trim()) {
+      setNewsletterError("Please enter your email address.");
+      setNewsletterMessage("");
+      return;
+    }
+
+    if (!validateEmail(newsletterEmail)) {
+      setNewsletterError("Please enter a valid email address.");
+      setNewsletterMessage("");
+      return;
+    }
+
+    setNewsletterError("");
+    setNewsletterMessage("Subscribed successfully!");
+    setNewsletterEmail("");
+    setTimeout(() => setNewsletterMessage(""), 4000);
+  };
+
   return (
     <>
       <Hero />
@@ -147,16 +176,23 @@ const Home = () => {
               </p>
 
               <form
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={handleSubscribe}
                 className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
               >
                 <div className="relative flex-1">
                   <Mail className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-blue-400" />
                   <input
                     type="email"
+                    value={newsletterEmail}
+                    onChange={(e) => {
+                      setNewsletterEmail(e.target.value);
+                      setNewsletterError("");
+                    }}
                     required
                     placeholder="Enter your email"
-                    className="w-full rounded-2xl border-0 py-4 pl-12 pr-4 text-sm font-medium text-gray-900 placeholder-blue-300 shadow-lg outline-none"
+                    className={`w-full rounded-2xl border-0 py-4 pl-12 pr-4 text-sm font-medium text-white caret-blue-400 placeholder-blue-300 shadow-lg outline-none transition-colors duration-300 focus:ring-2 focus:ring-blue-400 ${
+                      newsletterError ? "ring-2 ring-red-400" : ""
+                    }`}
                   />
                 </div>
                 <button
@@ -167,6 +203,12 @@ const Home = () => {
                   <Send className="h-4 w-4" />
                 </button>
               </form>
+              {newsletterError && (
+                <p className="mt-3 text-sm text-red-400">{newsletterError}</p>
+              )}
+              {newsletterMessage && (
+                <p className="mt-3 text-sm text-green-400">{newsletterMessage}</p>
+              )}
             </div>
           </div>
         </div>
